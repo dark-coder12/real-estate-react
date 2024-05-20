@@ -1,4 +1,4 @@
-![Screenshot 2024-04-29 171142](https://github.com/dark-coder12/real-estate-react/assets/82564549/37f1b71d-a4dc-4ce8-9d8e-28965370b121)## Setting up Project
+## Setting up Project
 
 1. Start the frontend with npm start on localhost.
 2. Start the backend using python deploy.py
@@ -19,7 +19,7 @@ A softmax function relates all probabilities together. If a certain class is 0.9
 
 A softmax function tries to fit images that are not real estate into a certain classification as well, as the sum as to be equal to 1 in any case. Sigmoid does not have this restriction. However, a sigmoid function may give 2-3 predictions with high probability values and to shortlist the most likely one we can then also get the top prediction from softmax and compare whether it is also a high prediction by the sigmoid function.
 
-![Uploading Screenshot 2024-04-29 171208.png…]()  
+![Screenshot 2024-04-29 171142](https://github.com/dark-coder12/real-estate-react/assets/82564549/37f1b71d-a4dc-4ce8-9d8e-28965370b121)  
 ![Screenshot 2024-04-29 171142](https://github.com/dark-coder12/real-estate-react/assets/82564549/e2740737-85c6-4715-ad5d-5457248ba2f2)
 
 
