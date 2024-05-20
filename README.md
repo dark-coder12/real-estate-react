@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+![Screenshot 2024-04-29 171142](https://github.com/dark-coder12/real-estate-react/assets/82564549/37f1b71d-a4dc-4ce8-9d8e-28965370b121)## Setting up Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Start the frontend with npm start on localhost.
+2. Start the backend using python deploy.py
 
-## Available Scripts
+## Working of Project
 
-In the project directory, you can run:
+The React frontend asks for an image from the user. After it has successfully loaded, a call to the backend endpoint is made. Two H5 files (containing the model details) are loaded. One contains the model with the softmax function and one contains the model trained with the sigmoid function in the last output layer. Both make their predictions and the results are displayed on the screen. According to what threshold we want to keep e.g. a prediction of above 95% from both models will result in a class being predicted as positive, the results can be manipulated. 
 
-### `npm start`
+## Softmax and Sigmoid functions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Sigmoid Function
+A sigmoid function gives the probabilities independently of each other. It could predict 1.0 for both living room or bedroom at once.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Softmax Function
+A softmax function relates all probabilities together. If a certain class is 0.97, the remaining class probabilities have to sum to 0.03.
 
-### `npm test`
+## Reason of using both functions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A softmax function tries to fit images that are not real estate into a certain classification as well, as the sum as to be equal to 1 in any case. Sigmoid does not have this restriction. However, a sigmoid function may give 2-3 predictions with high probability values and to shortlist the most likely one we can then also get the top prediction from softmax and compare whether it is also a high prediction by the sigmoid function.
 
-### `npm run build`
+![Uploading Screenshot 2024-04-29 171208.png…]()  
+![Screenshot 2024-04-29 171142](https://github.com/dark-coder12/real-estate-react/assets/82564549/e2740737-85c6-4715-ad5d-5457248ba2f2)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
